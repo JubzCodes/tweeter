@@ -1,5 +1,6 @@
 main {
   /* width: 90%; */
+  margin-bottom: 20px;
   padding-left: 5%;
   padding-right: 5%;
   align-items: center;
@@ -23,13 +24,12 @@ main {
   font-size: 1em;
 }
 
-#button {
+#button:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #question {
-  margin-bottom: -25px;
-  z-index: 2;
+  margin-bottom: 0px;
 }
 
 #tweet-text {
@@ -39,9 +39,121 @@ main {
   display: flex;
   background-color: #f4f1ec;
   border-bottom: black solid 3px;
-  z-index: 1;
+  border-radius: 5px;
 }
 
 .new-tweet {
   width: 100%;
 }
+
+article {
+  border: black solid 3px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+article:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+article > header {
+  height: 80px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #f4f1ec;
+  background-image: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile {
+  width: 170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile img {
+  width: 50px;
+  height: 45px;
+  display: flex;
+}
+
+article h5 {
+  margin-top: 22px;
+}
+
+.profile h5 {
+  margin-top: 22px;
+}
+article p {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: black solid 3px;
+  border-radius: 5px;
+  font-family: "source-sans-pro", sans-serif;
+  font-size: 0.8em;
+}
+
+article footer {
+  margin-top: -48px;
+  height: 54px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "source-sans-pro", sans-serif;
+  font-size: 0.5em;
+}
+
+article footer p {
+  margin: 0px;
+  padding-bottom: 0px;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: none;
+}
+
+.pics {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flag {
+  border: none;
+  outline: none;
+}
+
+.retweet {
+  border: none;
+  outline: none;
+}
+
+.heart {
+  border: none;
+  outline: none;
+}
+
+i:hover {
+  color: #4056a1;
+}
+/* 
+article {
+  border: black solid 3px;
+  width: 100%;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  padding-left: 5%;
+  padding-right: 5%;
+  align-items: center;
+  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
