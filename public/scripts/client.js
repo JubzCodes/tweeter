@@ -42,7 +42,7 @@ $(document).ready(function() {
               </header>
               <p>${obj.content.text}</p>
             <footer>
-              <p>${timeago.format(obj.created_at)}/p>
+              <p>${timeago.format(obj.created_at)}</p>
               <div class="pics">
                 <button class="flag"><i class="fas fa-flag"></i></button>
                 <button class="retweet"><i class="fas fa-retweet"></i></button>
