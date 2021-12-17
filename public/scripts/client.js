@@ -66,7 +66,7 @@ $(document).ready(function() {
     const $formData = $(this).serialize();
     const tweetText = $(this).children("textarea").val();
 
-    if (tweetText.length < 0) {
+    if (tweetText.length === 0) {
       alert("Tweets must be atleast 1 character long!");
     } else if (tweetText.length > 140) {
       alert("Tweets can't be over 140 characters long!");
