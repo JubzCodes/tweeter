@@ -6,9 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["Tablet View"]()
+!["Tablet View"](https://github.com/JubzCodes/tweeter/blob/master/screenshots/tablet-View.png)
 
-!["Desktop View"]()
+!["Desktop View"](https://github.com/JubzCodes/tweeter/blob/master/screenshots/desktop-View.png)
 
 ## Getting Started
 
