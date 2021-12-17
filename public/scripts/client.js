@@ -19,11 +19,11 @@ const data = [
     },
     {
       "user": {
-        "name": "Descartes",
+        "name": "Katara",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
+        "handle": "@TheLastAirbender" },
       "content": {
-        "text": "Je pense , donc je suis"
+        "text": "Anybody have waterbending scrolls?"
       },
       "created_at": 1461113959088
     }
@@ -59,6 +59,31 @@ $(document).ready(function() {
     }
   };
   renderTweets(data);
+
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+
+    const $formData = $(this).serialize();
+    const tweetText = $(this).children("textarea").val();
+
+    $.ajax({
+      url: "/tweets", 
+      method: "post", 
+      data: $formData,
+      success: () => console.log("sucess"),
+      error: (err) => console.log(`error: ${err}`)
+    });
+  });
+
+  const loadTweets = () => {
+    $.ajax({
+      url: "/tweets", 
+      method: "get", 
+      success: (tweets) => renderTweets(tweets),
+      error: (err) => console.log(`error: ${err}`)
+    });
+  };
+  loadTweets();
 });
 
 
