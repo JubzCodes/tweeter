@@ -15,7 +15,7 @@ const data = [
       "content": {
         "text": "Whats good? What's really good?"
       },
-      "created_at": 1461116232227
+      "created_at": 1639535736824
     },
     {
       "user": {
@@ -25,9 +25,16 @@ const data = [
       "content": {
         "text": "Anybody have waterbending scrolls?"
       },
-      "created_at": 1461113959088
+      "created_at": 1639622136824
     }
   ]
+
+const newEscape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 
 $(document).ready(function() {
   const createTweetElement = function(obj) {
@@ -35,12 +42,12 @@ $(document).ready(function() {
       `<article>
               <header>
                 <div class="profile">
-                  <img src="${obj.user.avatars}">
-                  <h5>${obj.user.name}</h5>
+                  <img src=${newEscape(obj.user.avatars)}>
+                  <h5>${newEscape(obj.user.name)}</h5>
                 </div>
-                <h5>${obj.user.handle}</h5>
+                <h5>${newEscape(obj.user.handle)}</h5>
               </header>
-              <p>${obj.content.text}</p>
+              <p>${newEscape(obj.content.text)}</p>
             <footer>
               <p>${timeago.format(obj.created_at)}</p>
               <div class="pics">
@@ -55,7 +62,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $("#tweets-container").append($tweet);
+      $("#tweets-container").prepend($tweet);
     }
   };
   renderTweets(data);
@@ -75,8 +82,11 @@ $(document).ready(function() {
         url: "/tweets", 
         method: "post", 
         data: $formData,
-        success: () => console.log("sucess"),
+        success: () => loadTweets(),
         error: (err) => console.log(`error: ${err}`)
+      })
+        .then((data) => {
+        renderTweets(data);
       });
     }
   });

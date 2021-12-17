@@ -70,7 +70,7 @@ article > header {
 }
 
 .profile {
-  width: 170px;
+  width: 249px;
   display: flex;
   flex-direction: row;
   /* justify-content: space-between; */
