@@ -74,15 +74,23 @@ $(document).ready(function() {
     const tweetText = $(this).children("textarea").val();
 
     if (tweetText.length === 0) {
-      alert("Tweets must be atleast 1 character long!");
+      $("#my-error-message").text("❗Tweets must be atleast 1 character long❗");
+      setTimeout(() => {
+        $("#my-error-message").slideDown();
+      }, 100);
     } else if (tweetText.length > 140) {
-      alert("Tweets can't be over 140 characters long!");
+      $("#my-error-message").text("❗Tweet is too many characters long❗");
+      setTimeout(() => {
+        $("#my-error-message").slideDown();
+      }, 100);
     } else {
       $.ajax({
         url: "/tweets", 
         method: "post", 
         data: $formData,
-        success: () => loadTweets(),
+        success: () => {
+          $("#my-error-message").slideUp()
+          loadTweets()},
         error: (err) => console.log(`error: ${err}`)
       })
         .then((data) => {

@@ -149,6 +149,12 @@ article footer p {
 i:hover {
   color: #4056a1;
 }
+
+#my-error-message {
+  display: flex;
+  justify-content: center;
+}
+
 /* 
 article {
   border: black solid 3px;
