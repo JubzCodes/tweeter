@@ -1,5 +1,4 @@
 main {
-  /* width: 90%; */
   margin-bottom: 20px;
   padding-left: 5%;
   padding-right: 5%;
@@ -17,6 +16,7 @@ main {
 }
 
 #div {
+  margin-bottom: 5px;
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
@@ -25,6 +25,7 @@ main {
 }
 
 #button:hover {
+  background-color: white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -73,7 +74,6 @@ article > header {
   width: 249px;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
 }
 
 .profile img {
@@ -109,6 +109,7 @@ article footer {
   height: 54px;
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   justify-content: space-between;
   font-family: "source-sans-pro", sans-serif;
   font-size: 0.5em;
@@ -146,26 +147,19 @@ article footer p {
   background-color: white;
 }
 
-i:hover {
-  color: #4056a1;
+.flag:hover {
+  color: crimson;
+}
+
+.retweet:hover {
+  color: crimson;
+}
+
+.heart:hover {
+  color: crimson;
 }
 
 #my-error-message {
   display: flex;
   justify-content: center;
 }
-
-/* 
-article {
-  border: black solid 3px;
-  width: 100%;
-  margin-top: 45px;
-  margin-bottom: 45px;
-  padding-left: 5%;
-  padding-right: 5%;
-  align-items: center;
-  background-color: #f4f1ec;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} */

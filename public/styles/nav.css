@@ -21,8 +21,22 @@ nav {
   flex-direction: column;
 }
 
-i {
+.down-arrow {
   color: crimson;
+  align-self: center;
+  color: crimson;
+  padding: 0.3em;
+
+  animation: moving 1s infinite alternate;
+}
+
+@keyframes moving {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-6px);
+  }
 }
 
 #tweeter {

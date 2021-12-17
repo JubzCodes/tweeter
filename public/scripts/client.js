@@ -4,38 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-    {
-      "user": {
-        "name": "StinkMeaner",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@Boondocks"
-      },
-      "content": {
-        "text": "Whats good? What's really good?"
-      },
-      "created_at": 1639535736824
-    },
-    {
-      "user": {
-        "name": "Katara",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@TheLastAirbender" },
-      "content": {
-        "text": "Anybody have waterbending scrolls?"
-      },
-      "created_at": 1639622136824
-    }
-  ]
-
+// escape function
 const newEscape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-
+//create tweet element function
 $(document).ready(function() {
   const createTweetElement = function(obj) {
     const $tweet = $(
@@ -59,14 +35,14 @@ $(document).ready(function() {
           </article>`);
     return $tweet;
   };
+  // render tweets function
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $("#tweets-container").prepend($tweet);
     }
   };
-  renderTweets(data);
-
+// submits tweets
   $("form").on("submit", function(event) {
     event.preventDefault();
 
@@ -74,12 +50,12 @@ $(document).ready(function() {
     const tweetText = $(this).children("textarea").val();
 
     if (tweetText.length === 0) {
-      $("#my-error-message").text("❗Tweets must be atleast 1 character long❗");
+      $("#my-error-message").text("❗Tweet is empty❗");
       setTimeout(() => {
         $("#my-error-message").slideDown();
       }, 100);
     } else if (tweetText.length > 140) {
-      $("#my-error-message").text("❗Tweet is too many characters long❗");
+      $("#my-error-message").text("❗Tweet is too long❗");
       setTimeout(() => {
         $("#my-error-message").slideDown();
       }, 100);
@@ -98,7 +74,7 @@ $(document).ready(function() {
       });
     }
   });
-
+// load tweets function
   const loadTweets = () => {
     $.ajax({
       url: "/tweets", 
@@ -109,5 +85,4 @@ $(document).ready(function() {
   };
   loadTweets();
 });
-
 

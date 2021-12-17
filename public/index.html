@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets-layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/desktop.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tablet.css" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
@@ -36,34 +38,36 @@
       <span id="tweeter"><b>tweeter</b></span>
       <div id="text"> 
         <span><b>Write</b> a new tweet</span>
-        <i class="fa fa-angle-double-down"></i>
+        <a class="down-arrow" href="#tweet"><i class="fas fa-angle-double-down"></i></a>
       </div>
     </nav>
-    <header>
-      <div>
-        <img src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div>
-        <h2><b>Jaden </b> King</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2></h2>
-        <form id="form" method="post" action="/tweets">
-          <label id="question" for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div id="div">
-            <button id="button"type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text"><b>140</b></output>
-          </div>
-        </form>
-        <div id="my-error-message"></div>
-      </section>
-      <section id="tweets-container">
-      </section>
-    </main>
+    <div class="content">
+      <header>
+        <div>
+          <img src="/images/profile-hex.png">
+        </div>
+        <br>
+        <div>
+          <h2><b>Jaden </b> King</h2>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2></h2>
+          <form id="form" method="post" action="/tweets">
+            <label id="question" for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div id="div">
+              <button id="button"type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"><b>140</b></output>
+            </div>
+          </form>
+          <div id="my-error-message"></div>
+        </section>
+        <section id="tweets-container">
+        </section>
+      </main>
+    </div>
   </body>
 </html>
