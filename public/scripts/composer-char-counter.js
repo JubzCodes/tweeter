@@ -10,3 +10,10 @@ $(document).ready(function() {
     }
   });
 });
+
+$(document).ready(function () {
+   $("#form").on("submit", function () {
+     $("textarea#tweet-text").val(''); 
+     $('.counter').val(140);
+    });
+});
