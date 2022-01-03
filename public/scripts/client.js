@@ -87,5 +87,12 @@ $(document).ready(function() {
         error: (err) => console.log(`error: ${err}`)
       })
     });
+    $("#tweet-text").on('input', function() {
+        const tweetText = $(this).val().length;
+        if (tweetText <= 140) {
+          $("#my-error-message").slideUp();
+        }
+      })
 });
+
     
